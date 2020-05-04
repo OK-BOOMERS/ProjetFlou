@@ -18,7 +18,7 @@ namespace core{
         virtual T evaluate()const;
         virtual T evaluate(const std::vector<Expression<T>*>)const;
     private:
-        UnaryExpression<T> *operands;
+        std::vector<Expression<T>*> operands;
         NaryExpression<T>* ope;
     };
 
@@ -30,7 +30,7 @@ namespace core{
     }
 
     template<class T>
-    T NaryExpressionModel<T>::evaluate(const std::vector<Expression<T>*>) const {
+    T NaryExpressionModel<T>::evaluate(const std::vector<Expression<T>*> operands) const {
         if(operands!= nullptr){
             return evaluate(operands);
         }
