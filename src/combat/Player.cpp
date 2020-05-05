@@ -11,8 +11,9 @@ combat::Player::Player() {
 }
 
 int combat::Player::attack(){
-    srand (time(nullptr));
-    int damage = rand() % 10 + 10;
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    int damage = 10 +  std::uniform_int_distribution<> dis(1, 10)
     substractEnergy(20)
     return damage;
 }

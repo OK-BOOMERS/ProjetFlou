@@ -9,6 +9,8 @@
 #include <time.h>       /* time */
 #include "../combat/Player.h"
 #include "Player.h"
+#include <random>
+#include <iostream>
 
 
 namespace combat{

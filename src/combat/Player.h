@@ -8,7 +8,8 @@
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
 #include "Enemy.h"
-
+#include <random>
+#include <iostream>
 
 namespace combat{
     class Player{
