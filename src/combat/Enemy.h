@@ -28,6 +28,7 @@ namespace combat{
     private:
         int hp;
         int energy;
+        bool block;
 
 
     };
