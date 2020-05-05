@@ -115,7 +115,7 @@ int main() {
     Expression<float> *system2 = factorySugeno.newSugenoDefuzz(&regle);
 
     // *****************************************************************************************************************
-    while(true)
+    /*while(true)
     {
         cout << "service : ";cin >> s;
         service.setValue(s);
@@ -123,7 +123,7 @@ int main() {
         food.setValue(s);
         cout << "Mamdani tips -> " << system->evaluate() << endl;
         cout << "Sugeno tips -> " << system2->evaluate() << endl;
-    }
+    }*/
     combat::Player pla;
     combat::Enemy ene;
     combat::Fight fight("",pla,ene);

@@ -3,7 +3,10 @@
 //
 
 
+#include <random>
 #include "Player.h"
+
+
 
 combat::Player::Player() {
     hp=100;
@@ -11,8 +14,11 @@ combat::Player::Player() {
 }
 
 int combat::Player::attack(){
-    srand (time(nullptr));
-    int damage = rand() % 10 + 10;
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(1, 10);
+    int damage =  dis(gen) + 10 ;
+    //dis.reset();
     substractEnergy(80);
     return damage;
 }

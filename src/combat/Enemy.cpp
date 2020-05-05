@@ -34,10 +34,6 @@ void combat::Enemy::substractEnergy(int i){
 }
 
 void combat::Enemy::substractHP(int i) {
-    if(block){
-        i=i/2;
-        block=false;
-    }
     hp-=i;
     if(hp < 0){
         hp=0;
