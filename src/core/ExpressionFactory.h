@@ -3,7 +3,7 @@
 #include "UnaryExpression.h"
 #include "UnaryExpressionModel.h"
 #include "BinaryExpression.h"
-#include "BinaryExpressionModelTest.h"
+#include "BinaryExpressionModel.h"
 
 namespace core{
     template <class T>
@@ -35,7 +35,7 @@ namespace core{
     template<class T>
     Expression<T> *
     ExpressionFactory<T>::newBinary( BinaryExpression<T> *ope,  Expression<T> *l,  Expression<T> *r) {
-        return Hold(new BinaryExpressionModelTest<T>(l, r, ope));
+        return Hold(new BinaryExpressionModel<T>(l, r, ope));
     }
 
     template<class T>
