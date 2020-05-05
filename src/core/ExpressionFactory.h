@@ -4,7 +4,6 @@
 #include "UnaryExpressionModel.h"
 #include "BinaryExpression.h"
 #include "BinaryExpressionModel.h"
-#include "NaryExpressionModel.h"
 
 namespace core{
     template <class T>
@@ -12,10 +11,9 @@ namespace core{
     public:
         ExpressionFactory(){};
         virtual ~ExpressionFactory();
-    protected:
+   // protected:
         virtual Expression<T>* newUnary( UnaryExpression<T>* ope,  Expression<T> *o );
         virtual Expression<T>* newBinary( BinaryExpression<T>* ope, Expression<T>* l, Expression<T>* r);
-        virtual Expression<T>* newNary(NaryExpression<T>* ope,std::vector<Expression<T>*>*operands);
     private:
         Expression<T>* Hold( Expression<T>*);
         std::set<Expression<T>*> memory;
@@ -37,17 +35,12 @@ namespace core{
     template<class T>
     Expression<T> *
     ExpressionFactory<T>::newBinary( BinaryExpression<T> *ope,  Expression<T> *l,  Expression<T> *r) {
-        return Hold(new BinaryExpressionModel<T>(l,r,ope));
+        return Hold(new BinaryExpressionModel<T>(l, r, ope));
     }
 
     template<class T>
     Expression<T> *ExpressionFactory<T>::Hold(Expression<T> * e) {
         this->memory.insert(e);
         return e;
-    }
-
-    template<class T>
-    Expression<T> *ExpressionFactory<T>::newNary(NaryExpression<T> *ope, std::vector<Expression<T>*> *operands) {
-        return Hold(new NaryExpressionModel<T>(operands,ope));
     }
 }

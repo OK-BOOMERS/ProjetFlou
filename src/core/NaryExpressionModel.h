@@ -11,22 +11,17 @@
 
 namespace core{
     template <class T>
-    class NaryExpressionModel : public NaryExpression<T>, public Expression<T>{
+    class NaryExpressionModel : public NaryExpression<T>{
     public:
-        NaryExpressionModel(std::vector<Expression<T>* >*,NaryExpression<T>*);
-        virtual ~NaryExpressionModel();
+        NaryExpressionModel(){}
+        virtual ~NaryExpressionModel(){}
         virtual T evaluate()const;
-        virtual T evaluate(const std::vector<Expression<T>*>* )const;
+        virtual T evaluate(const std::vector<Expression<T>*>*)const;
     private:
-        std::vector<Expression<T>*>* operands;
+        std::vector<Expression<T>*> operands;
         NaryExpression<T>* ope;
     };
 
-    template<class T>
-    NaryExpressionModel<T>::~NaryExpressionModel() {
-        delete operands;
-        delete ope;
-    }
     template<class T>
     T NaryExpressionModel<T>::evaluate() const {
         if(ope != nullptr){
@@ -35,16 +30,12 @@ namespace core{
     }
 
     template<class T>
-    T NaryExpressionModel<T>::evaluate(const std::vector<Expression<T>*>* oper) const {
-        if(oper!= nullptr){
-            return evaluate(oper);
+    T NaryExpressionModel<T>::evaluate(const std::vector<Expression<T>*>* operands) const {
+        if(operands!= nullptr){
+            return evaluate(operands);
         }
     }
-    template <class T>
-    NaryExpressionModel<T>::NaryExpressionModel(std::vector<Expression<T>* >* oper,NaryExpression<T>* ope) : operands(oper),ope(ope){}
-
-
 }
 
 
-#endif //NARYEXPRESSIONMODEL_H
+#endif //PROJETFLOU_NARYEXPRESSIONMODEL_H

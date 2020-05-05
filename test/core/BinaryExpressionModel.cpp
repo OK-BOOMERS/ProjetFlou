@@ -25,6 +25,6 @@ TEST(BinaryExpression,evaluate){
 
 
     AndMin<float> amin;
-    core::BinaryExpressionModel<float> binaryExpressionModel(&left,&right,&amin);
+    core::BinaryExpressionModel<float> binaryExpressionModel(&left, &right, &amin);
     ASSERT_EQ(binaryExpressionModel.evaluate(),0.5f);
 }

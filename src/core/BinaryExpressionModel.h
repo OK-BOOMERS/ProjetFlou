@@ -19,7 +19,7 @@ namespace core{
 
 
     public:
-        BinaryExpressionModel(Expression<T>* left,Expression<T>* right, BinaryExpression<T>* ope);
+        BinaryExpressionModel(Expression<T>* left, Expression<T>* right, BinaryExpression<T>* ope);
 
         virtual ~BinaryExpressionModel();
         virtual BinaryExpression<T>* getOperateur();
@@ -34,10 +34,10 @@ namespace core{
     }
 
     template<class T>
-    BinaryExpressionModel<T>::BinaryExpressionModel( Expression<T>* left, Expression<T>* right, BinaryExpression<T>* ope):left(left), right(right),ope(ope) {}
+    BinaryExpressionModel<T>::BinaryExpressionModelTest(Expression<T>* left, Expression<T>* right, BinaryExpression<T>* ope):left(left), right(right), ope(ope) {}
 
     template<class T>
-    BinaryExpressionModel<T>::~BinaryExpressionModel() {
+    BinaryExpressionModel<T>::~BinaryExpressionModelTest() {
     }
 
     template<class T>
