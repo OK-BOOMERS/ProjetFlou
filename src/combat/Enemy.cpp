@@ -9,6 +9,7 @@
 combat::Enemy::Enemy() {
     hp=100;
     energy=200;
+    block=false;
 }
 
 int combat::Enemy::attack(){
@@ -33,6 +34,10 @@ void combat::Enemy::substractEnergy(int i){
 }
 
 void combat::Enemy::substractHP(int i) {
+    if(block){
+        i=i/2;
+        block=false;
+    }
     hp-=i;
     if(hp < 0){
         hp=0;
@@ -53,8 +58,7 @@ int combat::Enemy::makeDecision(  float decisione ){
         addEnergy(50);
     }
     else if(decisione <= 4 ){
-        return attack();
-        //rien mais doit block
+        block = true;
     }
     else{
         return attack();
