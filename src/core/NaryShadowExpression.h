@@ -38,8 +38,8 @@ namespace core{
 
     template<class T>
     T NaryShadowExpression<T>::evaluate(const std::vector<Expression<T> *>*expr) const {
-        return this->target->evaluate(expr);
-    }
+    return this->target->evaluate(expr);
+}
 
 
 }

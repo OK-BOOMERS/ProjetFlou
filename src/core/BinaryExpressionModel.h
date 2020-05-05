@@ -34,10 +34,10 @@ namespace core{
     }
 
     template<class T>
-    BinaryExpressionModel<T>::BinaryExpressionModelTest(Expression<T>* left, Expression<T>* right, BinaryExpression<T>* ope):left(left), right(right), ope(ope) {}
+    BinaryExpressionModel<T>::BinaryExpressionModel(Expression<T>* left, Expression<T>* right, BinaryExpression<T>* ope):left(left), right(right), ope(ope) {}
 
     template<class T>
-    BinaryExpressionModel<T>::~BinaryExpressionModelTest() {
+    BinaryExpressionModel<T>::~BinaryExpressionModel() {
     }
 
     template<class T>
