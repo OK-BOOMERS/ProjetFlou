@@ -3,7 +3,7 @@
 //
 
 #include <gtest/gtest.h>
-#include "../../src/core/BinaryExpressionModel.h"
+#include "../../src/core/BinaryExpressionModelTest.h"
 #include "../../src/core/UnaryExpressionModel.h"
 #include "../../src/core/ValueModel.h"
 
@@ -25,6 +25,6 @@ TEST(BinaryExpression,evaluate){
 
 
     AndMin<float> amin;
-    core::BinaryExpressionModel<float> binaryExpressionModel(&left,&right,&amin);
+    core::BinaryExpressionModelTest<float> binaryExpressionModel(&left, &right, &amin);
     ASSERT_EQ(binaryExpressionModel.evaluate(),0.5f);
 }

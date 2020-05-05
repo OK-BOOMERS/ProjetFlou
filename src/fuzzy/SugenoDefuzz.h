@@ -8,7 +8,7 @@
 #include <vector>
 #include "../core/NaryExpression.h"
 #include "../core/BinaryExpression.h"
-#include "../core/BinaryExpressionModel.h"
+#include "../core/BinaryExpressionModelTest.h"
 #include "../core/BinaryShadowExpression.h"
 #include "SugenoThen.h"
 
@@ -31,7 +31,7 @@ namespace fuzzy{
         T denumerateur = 0;
 
         for (it = operandes->begin(); it != operandes->end(); it++){
-            core::BinaryExpressionModel bem = (core::BinaryExpressionModel<T>*)(*it);
+            core::BinaryExpressionModelTest bem = (core::BinaryExpressionModelTest<T>*)(*it);
             core::BinaryShadowExpression bse = (core::BinaryShadowExpression<T>*)bem.getOperateur();
             SugenoThen<T>* sugthen = (SugenoThen<T>*)bse.getTarget();
             numerateur+=bem->evaluate();

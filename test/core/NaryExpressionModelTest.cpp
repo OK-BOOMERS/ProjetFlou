@@ -2,6 +2,7 @@
 #include "../../src/core/UnaryExpressionModel.h"
 #include "../../src/core/ValueModel.h"
 #include "../../src/fuzzy/IsTriangle.h"
+#include "../../src/fuzzy/AndMin.h"
 
 using namespace fuzzy;
 
@@ -17,6 +18,9 @@ TEST(NaryExpressionModel,evaluate){
     core::UnaryExpressionModel<float> e2(&service,&bad);
     core::UnaryExpressionModel<float> e3(&service,&excellent);
 
+    AndMin<float> andmin;
+    std::vector<core::Expression<float>*> ops;
+    ops.push_back(e1*);
 
-    
+
 }

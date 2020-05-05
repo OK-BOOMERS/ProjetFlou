@@ -2,7 +2,7 @@
 #include "core/ValueModel.h"
 
 #include "core/UnaryExpressionModel.h"
-#include "core/BinaryExpressionModel.h"
+#include "core/BinaryExpressionModelTest.h"
 #include "fuzzy/AndMin.h"
 #include "fuzzy/IsTriangle.h"
 #include "fuzzy/IsGaussian.h"

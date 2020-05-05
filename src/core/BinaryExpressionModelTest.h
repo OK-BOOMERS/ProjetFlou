@@ -10,7 +10,7 @@
 
 namespace core{
     template <class T>
-    class BinaryExpressionModel: public Expression<T>, public BinaryExpression<T>{
+    class BinaryExpressionModelTest: public Expression<T>, public BinaryExpression<T>{
     private:
         Expression<T>* left;
         Expression<T>* right;
@@ -19,35 +19,35 @@ namespace core{
 
 
     public:
-        BinaryExpressionModel(Expression<T>* left,Expression<T>* right, BinaryExpression<T>* ope);
+        BinaryExpressionModelTest(Expression<T>* left, Expression<T>* right, BinaryExpression<T>* ope);
 
-        virtual ~BinaryExpressionModel();
+        virtual ~BinaryExpressionModelTest();
         virtual BinaryExpression<T>* getOperateur();
         virtual T evaluate()const;
         virtual T evaluate(Expression<T>* l,Expression<T>* r)const;
     };
 
     template<class T>
-    T BinaryExpressionModel<T>::evaluate() const{
+    T BinaryExpressionModelTest<T>::evaluate() const{
         if (left != nullptr && right != nullptr)
             return evaluate(left, right);
     }
 
     template<class T>
-    BinaryExpressionModel<T>::BinaryExpressionModel( Expression<T>* left, Expression<T>* right, BinaryExpression<T>* ope):left(left), right(right),ope(ope) {}
+    BinaryExpressionModelTest<T>::BinaryExpressionModelTest(Expression<T>* left, Expression<T>* right, BinaryExpression<T>* ope):left(left), right(right), ope(ope) {}
 
     template<class T>
-    BinaryExpressionModel<T>::~BinaryExpressionModel() {
+    BinaryExpressionModelTest<T>::~BinaryExpressionModelTest() {
     }
 
     template<class T>
-    T BinaryExpressionModel<T>::evaluate(Expression<T>* l, Expression<T>* r) const {
+    T BinaryExpressionModelTest<T>::evaluate(Expression<T>* l, Expression<T>* r) const {
         if (ope != nullptr)
             return ope->evaluate(l, r);
     }
 
     template<class T>
-    BinaryExpression<T> *BinaryExpressionModel<T>::getOperateur() {
+    BinaryExpression<T> *BinaryExpressionModelTest<T>::getOperateur() {
         return this->ope;
     }
 
